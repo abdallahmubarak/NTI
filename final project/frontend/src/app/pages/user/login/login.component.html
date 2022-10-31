@@ -1,0 +1,22 @@
+<section class="container my-3">
+    <div class="alert alert-danger my-2" *ngIf="errorMsg!=''">Invalid Credintials</div>
+    <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+    <div class="mb-3">
+        <input class="form-control" formControlName="email" placeholder="email" (input)="errorMsg=''">
+        <div class="alert alert-danger my-2" *ngIf="email?.invalid &&(email?.dirty || email?.touched || isSubmitted)">
+            <li *ngIf="email?.errors?.['required']">email is required</li>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" formControlName="password" placeholder="password">
+        <div class="alert alert-danger my-2" *ngIf="password?.invalid&&(password?.dirty || password?.touched || isSubmitted)">
+            <li *ngIf="password?.errors?.['required']">password is required</li>
+            <li *ngIf="password?.errors?.['pattern']">invalid format</li>
+        </div>
+
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary">Login</button>
+    </div>
+</form>
+</section>

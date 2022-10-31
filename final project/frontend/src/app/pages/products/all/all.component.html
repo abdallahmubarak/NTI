@@ -1,0 +1,18 @@
+<a *ngFor="let p of products" class="product_container" >  
+    <img class="image" src="assets/image.jpg">
+    <h1 class="title">{{p.name}}</h1>
+    <div class="product_footer">
+        <span class="price">{{p.price}} EGP</span>
+    </div>
+</a>
+<ng-template #notLoaded class="text-center">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>    </ng-template>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>

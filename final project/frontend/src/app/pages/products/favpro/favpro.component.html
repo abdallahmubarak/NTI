@@ -1,0 +1,9 @@
+<a *ngFor="let p of products" class="product_container" >  
+    <img class="image" src="assets/image.jpg">
+    <h1 class="title">{{p.name}}</h1>
+    <div class="product_footer">
+        <span class="price">{{p.price}} EGP</span>
+    </div>
+</a>
+<ng-template #notLoaded class="text-center">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>    </ng-template>

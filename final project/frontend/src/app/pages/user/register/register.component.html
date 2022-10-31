@@ -1,0 +1,49 @@
+<section class="container my-3">
+    <!-- <div class="alert alert-success">
+        value => {{registerForm.value|json}}<br>
+        valid => {{registerForm.valid}}<br>
+        invalid => {{registerForm.invalid}}<br>
+        touched => {{registerForm.touched}}<br>
+        dirty => {{registerForm.dirty}}<br>
+    </div> -->
+    <form [formGroup]="registerForm" (ngSubmit)="handleRegister()">
+    <div class="mb-3">
+        <input class="form-control" formControlName="name" placeholder="name">
+        <div class="alert alert-danger my-2" *ngIf="name?.invalid &&(name?.dirty || name?.touched || isSubmitted)">
+            <!-- {{name?.errors|json}} -->
+            <li *ngIf="name?.errors?.['required']">name is required</li>
+            <li *ngIf="name?.errors?.['minlength']">name min len 3</li>
+            <li *ngIf="name?.errors?.['maxlength']">name max len 20</li>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" formControlName="age" placeholder="age" (input)="errorMsg=''">
+        <div class="alert alert-danger my-2" *ngIf="errorMsg!=''">age used before</div>
+        <div class="alert alert-danger my-2" *ngIf="age?.invalid &&(age?.dirty || age?.touched || isSubmitted)">
+            <!-- {{userName?.errors|json}} -->
+            <li *ngIf="age?.errors?.['required']">age is required</li>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" formControlName="email" placeholder="email">
+        <div class="alert alert-danger my-2" *ngIf="email?.invalid&&(email?.dirty || email?.touched || isSubmitted)">
+            <!-- {{name?.errors|json}} -->
+            <li *ngIf="email?.errors?.['required']">email is required</li>
+            <li *ngIf="email?.errors?.['email']">invalid format</li>
+        </div>
+
+    </div>
+    <div class="mb-3">
+        <input class="form-control" formControlName="password" placeholder="password">
+        <div class="alert alert-danger my-2" *ngIf="password?.invalid&&(password?.dirty || password?.touched || isSubmitted)">
+            <!-- {{name?.errors|json}} -->
+            <li *ngIf="password?.errors?.['required']">password is required</li>
+            <li *ngIf="password?.errors?.['pattern']">invalid format</li>
+        </div>
+
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary">register</button>
+    </div>
+</form>
+</section>

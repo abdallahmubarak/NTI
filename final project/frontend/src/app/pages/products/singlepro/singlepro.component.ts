@@ -13,7 +13,7 @@ export class SingleproComponent implements OnInit {
  
   products:any[] = [];
   constructor(private data:ProductsService , private userdata:AuthService, private  _activated:ActivatedRoute , private router:Router) { }
-  id:any= this._activated.snapshot.paramMap.get('id'); //get id parameter
+  id:any= this._activated.snapshot.paramMap.get('id'); 
   obj:any = {};
 checkOtpValueFlag = false;
   CheckOtp=new FormGroup({

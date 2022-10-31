@@ -1,0 +1,59 @@
+<form class="example-form" [formGroup]="add_product_from" (ngSubmit)="AddProduct(add_product_from)">
+ 
+    <div class="form-group">
+        <label for="name">name</label>
+        <input type="text" class="form-control" formControlName="name"  id="name" placeholder="name" name="name" required >
+        <div class="alert alert-danger" *ngIf="this.add_product_from.controls['name'].invalid">
+         <span >
+  Invalid title
+         </span> 
+        </div>
+        
+      </div>
+
+
+    <div class="form-group"  >
+      <label for="price">price</label>      
+      <input type="number" class="form-control" formControlName="price" id="price" placeholder="Enter price" name="price" required  >
+      <div class="alert alert-danger" *ngIf="this.add_product_from.controls['price'].invalid" >
+      <span >
+        Invalid price
+               </span> 
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="Age">quantity</label>
+        <input type="number" class="form-control" formControlName="quantity"  id="quantity" placeholder="quantity" name="quantity" required >
+        <div class="alert alert-danger" *ngIf="this.add_product_from.controls['quantity'].invalid">
+         <span >
+  Invalid quantity
+         </span> 
+        </div>
+        
+      </div>
+
+
+      <div class="form-group">
+        <label for="description">description</label>
+        <input type="text" class="form-control" formControlName="description"  id="description" placeholder="description" name="description" required >
+        <div class="alert alert-danger" *ngIf="this.add_product_from.controls['description'].invalid">
+         <span >
+  Invalid details
+         </span> 
+        </div>
+        
+      </div>
+
+
+
+
+      <div class="form-group">
+        <input type="file" class="form-control" formControlName="img"  >
+      </div>
+
+
+    
+      <div class="form-group submit">
+        <button type="submit" class="btn btn-primary" [disabled]="this.add_product_from.invalid"  >Submit</button>
+      </div>
+

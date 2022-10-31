@@ -16,6 +16,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { FavproComponent } from './pages/products/favpro/favpro.component';
 import { CartComponent } from './pages/products/cart/cart.component';
+import { AddprodctComponent } from './pages/products/addprodct/addprodct.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CartComponent } from './pages/products/cart/cart.component';
     NavbarComponent,
     FooterComponent,
     FavproComponent,
-    CartComponent
+    CartComponent,
+    AddprodctComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ export class ProductsService {
   constructor(private http:HttpClient) { }
   
   
-  //addprodcut(Data: any): Observable<any> {return this.http.post(`${this.commonURL}addproduct`, Data)}
+  add_prodcut(Data: any): Observable<any> {return this.http.post(`${this.commonURL}addprodcut`, Data)}
   allproducts(): Observable<any> {return this.http.get(`${this.commonURL}allproducts/:page`)}
   allfav(): Observable<any> {return this.http.get(`${this.commonURL}favlist`)}
   list_single_product(id: any): Observable<any> {return this.http.get(`${this.commonURL}product/${id}`)}
